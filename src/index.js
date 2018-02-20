@@ -1,19 +1,17 @@
 class Sorter {
 
-    mass;
-
   constructor() {
-    this.mass =  new Array();
+    this.mass = new Array();
   }
 
   add(element) {
 
-    this.mass.add(element);
+    this.mass.push(element);
 
   }
 
   at(index) {
-    // your implementation
+      return this.mass[index];
   }
 
   get length() {
@@ -33,5 +31,9 @@ class Sorter {
   }
 }
 
-module.exports = Sorter;
+//module.exports = Sorter;
+
+let sorter;
+sorter = new Sorter();
+sorter.add(5);
 
