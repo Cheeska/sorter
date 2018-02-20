@@ -1,12 +1,14 @@
 class Sorter {
 
+    mass;
+
   constructor() {
-    let mass =  new Array();
+    this.mass =  new Array();
   }
 
   add(element) {
 
-    mass.add(element);
+    this.mass.add(element);
 
   }
 
@@ -15,7 +17,7 @@ class Sorter {
   }
 
   get length() {
-    console.log(mass.length);
+    console.log(this.mass.length);
   }
 
   toArray() {
@@ -32,3 +34,4 @@ class Sorter {
 }
 
 module.exports = Sorter;
+
