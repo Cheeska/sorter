@@ -1,10 +1,13 @@
 class Sorter {
+
   constructor() {
-    // your implementation
+    let mass =  new Array();
   }
 
   add(element) {
-    // your implementation
+
+    mass.add(element);
+
   }
 
   at(index) {
@@ -12,7 +15,7 @@ class Sorter {
   }
 
   get length() {
-    // your implementation
+    console.log(mass.length);
   }
 
   toArray() {
