@@ -1,5 +1,3 @@
-'use strict'
-
 class Sorter {
     constructor() {
         this.mass = new Array();
@@ -27,15 +25,15 @@ class Sorter {
     sort(indices) {
 
         var sortMass = new Array();
-        var lengtIndices = indices.length;
+        var lenghtIndices = indices.length;
 
-        for (var i = 0; i < lengtIndices; i++) {
-            sortMass.push(this.mass[lengtIndices[i]]);
+        for (var i = 0; i < lenghtIndices; i++) {
+            sortMass.push(this.mass[indices[i]]);
         }
 
         sortMass.sort(this.compareFunction);
 
-        for (var i = 0; i < lengtIndices; i++) {
+        for (var i = 0; i < lenghtIndices; i++) {
                 this.mass[indices[i]] = sortMass[i];
         }
     }
@@ -44,3 +42,12 @@ class Sorter {
         this.compareFunction = compareFunction;
     }
 }
+module.exports = Sorter;
+
+
+//sorter = new Sorter();
+
+//sorter.add(5);
+//sorter.sort([0]);
+
+//console.log(sorter.toArray());
