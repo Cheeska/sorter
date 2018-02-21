@@ -25,6 +25,7 @@ class Sorter {
     sort(indices) {
 
         var sortMass = new Array();
+        indices.sort();
         var lenghtIndices = indices.length;
 
         for (var i = 0; i < lenghtIndices; i++) {
@@ -47,7 +48,12 @@ module.exports = Sorter;
 
 //sorter = new Sorter();
 
+//sorter.add(6);
 //sorter.add(5);
-//sorter.sort([0]);
+//sorter.sort([0, 1]);
+
+//sorter.add(2);
+//sorter.add(1);
+//sorter.sort([1, 0]);
 
 //console.log(sorter.toArray());
