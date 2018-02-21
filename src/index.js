@@ -1,43 +1,46 @@
+'use strict'
+
 class Sorter {
+    constructor() {
+        this.mass = new Array();
+        this.length = 0;
+        this.setComparator((left, right) => left - right);
 
-  constructor() {
-    this.mass = new Array();
-    this.length = 0;
-    this.setComparator((left, right) => left - right);
-  }
+    }
 
-  add(element) {
+    add(element) {
+        this.mass.push(element);
+        this.length = this.mass.length;
+    }
 
-    this.mass.push(element);
-    this.length = this.mass.length;
+    at(index) {
+        return this.mass[index];
+    }
 
-  }
+    toArray() {
+        var arr = new Array();
+        for (var i = 0; i < this.length; i++)
+            arr[i] = this.mass[i];
+        return arr;
+    }
 
-  at(index) {
-      return this.mass[index];
-  }
+    sort(indices) {
 
-  get length() {
-    console.log(this.length);
-  }
+        var sortMass = new Array();
+        var lengtIndices = indices.length;
 
-  toArray() {
-    var arr = new Array();
-    for (var i = 0; i < this.length; i++)
-        arr[i] = this.mass[i];
-    return arr;
-  }
+        for (var i = 0; i < lengtIndices; i++) {
+            sortMass.push(this.mass[lengtIndices[i]]);
+        }
 
-  sort(indices) {
-    // your implementation
-  }
+        sortMass.sort(this.compareFunction);
 
-  setComparator(compareFunction) {
-    this.compareFunction = compareFunction;
-  }
+        for (var i = 0; i < lengtIndices; i++) {
+                this.mass[indices[i]] = sortMass[i];
+        }
+    }
+    
+    setComparator(compareFunction) {
+        this.compareFunction = compareFunction;
+    }
 }
-
-module.exports = Sorter;
-
-
-
