@@ -2,11 +2,13 @@ class Sorter {
 
   constructor() {
     this.mass = new Array();
+    this.length = 0;
   }
 
   add(element) {
 
     this.mass.push(element);
+    this.length = this.mass.length;
 
   }
 
@@ -15,11 +17,14 @@ class Sorter {
   }
 
   get length() {
-    console.log(this.mass.length);
+    console.log(this.length);
   }
 
   toArray() {
-    // your implementation
+    var arr = new Array();
+    for (var i = 0; i < this.length; i++)
+        arr[i] = this.mass[i];
+    return arr;
   }
 
   sort(indices) {
@@ -31,9 +36,7 @@ class Sorter {
   }
 }
 
-//module.exports = Sorter;
+module.exports = Sorter;
 
-let sorter;
-sorter = new Sorter();
-sorter.add(5);
+
 
