@@ -3,6 +3,7 @@ class Sorter {
   constructor() {
     this.mass = new Array();
     this.length = 0;
+    this.setComparator((left, right) => left - right);
   }
 
   add(element) {
@@ -32,7 +33,7 @@ class Sorter {
   }
 
   setComparator(compareFunction) {
-    // your implementation
+    this.compareFunction = compareFunction;
   }
 }
 
